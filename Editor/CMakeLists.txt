@@ -1,6 +1,5 @@
 add_executable(Zenith-Editor
-	Source/Main.cpp
-	Source/App.hpp
+	Source/Zenith-Editor.cpp
 )
 
 target_compile_features(Zenith-Editor PRIVATE cxx_std_20)
