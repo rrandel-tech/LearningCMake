@@ -1,12 +1,10 @@
-add_executable(Zenith-Editor ${EDITOR_SRC})
-
-add_subdirectory(Source)
-
-target_include_directories(Zenith-Editor PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+add_executable(Zenith-Editor
+	Source/Main.cpp
+	Source/App.hpp
 )
 
-target_link_libraries(Zenith-Editor
-    PRIVATE
-        Zenith
-)
+target_compile_features(Zenith-Editor PRIVATE cxx_std_20)
+
+target_include_directories(Zenith-Editor PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_link_libraries(Zenith-Editor PRIVATE Zenith)

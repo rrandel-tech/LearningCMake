@@ -1,17 +1,9 @@
-add_library(Zenith STATIC ${ENGINE_SRC})
-
-add_subdirectory(Source)
-
-target_include_directories(Zenith PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+add_library(Zenith 
+	Source/Core/Test.cpp
 )
 
-find_package(OpenGL REQUIRED)
+target_compile_features(Zenith PUBLIC cxx_std_20)
 
-target_link_libraries(Zenith
-    PUBLIC
-        glfw
-				spdlog
-				glad
-				OpenGL::GL
-)
+target_include_directories(Zenith PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_link_libraries(Zenith PUBLIC glfw spdlog glad)
